@@ -1,0 +1,27 @@
+server:
+  port: 9002
+
+spring:
+  application:
+    name: lesson-service
+  zipkin:
+    enabled: true
+    locator:
+      discovery:
+        enabled: true
+    sender:
+      type: web
+    base-url: http://192.168.2.40:9411
+    service:
+      name: lesson-service
+  sleuth:
+    sampler:
+      probability: 1
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.2.40:8848
+    sentinel:
+      transport:
+        port: 18748
+        dashboard: 192.168.2.40:8748

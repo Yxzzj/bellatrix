@@ -1,0 +1,51 @@
+spring:
+  application:
+    name: user-service
+  profiles:
+    active: p1
+  datasource:
+    url: jdbc:mysql://192.168.2.40/bellatrix?useUnicode=true&characterEncoding=utf-8&useAffectedRows=true&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    druid:
+      max-active: 20
+      initial-size: 1
+      min-idle: 1
+      max-wait: 60000
+      min-evictable-idle-time-millis: 60000
+      time-between-eviction-runs-millis: 300000
+  zipkin:
+    enabled: true
+    locator:
+      discovery:
+        enabled: true
+    sender:
+      type: web
+    base-url: http://192.168.2.40:9411
+    service:
+      name: user-service
+  sleuth:
+    sampler:
+      probability: 1
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.2.40:8848
+    sentinel:
+      transport:
+        port: 18749
+        dashboard: 192.168.2.40:8748
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml
+  typeAliasesPackage: pres.jeremy.bellatrix.*.entity
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  configuration:
+    auto-mapping-behavior: partial
+    map-underscore-to-camel-case: true
+    cache-enabled: false
