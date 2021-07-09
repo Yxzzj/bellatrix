@@ -1,0 +1,24 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: oauth-service
+  profiles:
+    active: dev
+  zipkin:
+    enabled: true
+    locator:
+      discovery:
+        enabled: true
+    sender:
+      type: web
+    base-url: http://192.168.2.40:9411
+    service:
+      name: oauth-service
+  sleuth:
+    sampler:
+      probability: 1
+jwt:
+  secret: da846d51952b40f084bc4e42aee7660a
+  expire: 3600
+  header: authorization

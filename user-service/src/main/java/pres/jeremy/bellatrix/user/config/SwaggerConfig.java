@@ -22,7 +22,6 @@ public class SwaggerConfig {
     @Bean
     public Docket backApi() {
         return new Docket(DocumentationType.OAS_30)
-                .groupName("bellatrix")
                 .apiInfo(apiInfo())
                 .select()
                 .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))

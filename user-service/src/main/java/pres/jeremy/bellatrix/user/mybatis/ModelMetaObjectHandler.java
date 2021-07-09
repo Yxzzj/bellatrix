@@ -3,9 +3,9 @@ package pres.jeremy.bellatrix.user.mybatis;
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import org.apache.ibatis.reflection.MetaObject;
 import org.springframework.stereotype.Component;
-import pres.jeremy.bellatrix.common.util.constant.FieldConstant;
-import pres.jeremy.bellatrix.common.util.utils.UserUtil;
-import pres.jeremy.bellatrix.user.dto.UserDTO;
+import pres.jeremy.bellatrix.common.web.constant.FieldConstant;
+import pres.jeremy.bellatrix.common.web.utils.UserUtil;
+import pres.jeremy.bellatrix.common.web.dto.UserDTO;
 
 import java.time.LocalDateTime;
 

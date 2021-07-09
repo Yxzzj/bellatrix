@@ -18,6 +18,8 @@ public class UserDO extends BaseDO {
 
     private String name;
 
+    private String userName;
+
     private String password;
 
     private Integer gender;

@@ -13,7 +13,9 @@
         <module>lesson-service</module>
         <module>user-api</module>
         <module>gateway-service</module>
-        <module>common-util</module>
+        <module>common-web</module>
+        <module>oauth-service</module>
+        <module>lesson-api</module>
     </modules>
 
     <properties>
@@ -36,6 +38,11 @@
         <mybatis-plus-generator.version>3.3.1</mybatis-plus-generator.version>
         <mybatis-spring-boot-starter.version>2.1.1</mybatis-spring-boot-starter.version>
         <mybatis-spring-boot-autoconfigure.version>2.1.1</mybatis-spring-boot-autoconfigure.version>
+        <io.jsonwebtoken.jjwt.version>0.9.1</io.jsonwebtoken.jjwt.version>
+        <org.aspectj.version>1.9.5</org.aspectj.version>
+        <spring-kafka.version>2.7.3</spring-kafka.version>
+        <sentinel.version>1.8.0</sentinel.version>
+        <nacos-api.version>1.4.1</nacos-api.version>
     </properties>
 
     <dependencyManagement>
@@ -128,9 +135,9 @@
             </dependency>
 
             <dependency>
-                <groupId>com.alibaba.cloud</groupId>
-                <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
-                <version>${com.alibaba.cloud.version}</version>
+                <groupId>com.alibaba.csp</groupId>
+                <artifactId>sentinel-core</artifactId>
+                <version>${sentinel.version}</version>
             </dependency>
 
             <dependency>
@@ -179,6 +186,47 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid</artifactId>
                 <version>${druid.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${io.jsonwebtoken.jjwt.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>${org.aspectj.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.kafka</groupId>
+                <artifactId>spring-kafka</artifactId>
+                <version>${spring-kafka.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.csp</groupId>
+                <artifactId>sentinel-core</artifactId>
+                <version>${sentinel.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.csp</groupId>
+                <artifactId>sentinel-datasource-nacos</artifactId>
+                <version>${sentinel.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.csp</groupId>
+                <artifactId>sentinel-annotation-aspectj</artifactId>
+                <version>${sentinel.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.nacos</groupId>
+                <artifactId>nacos-api</artifactId>
+                <version>${nacos-api.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

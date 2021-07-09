@@ -1,14 +1,18 @@
 package pres.jeremy.bellatrix.user.enums;
 
-import pres.jeremy.bellatrix.common.util.support.IMessageCode;
-import pres.jeremy.bellatrix.common.util.support.Resources;
-import pres.jeremy.bellatrix.common.util.utils.UserUtil;
+import pres.jeremy.bellatrix.common.web.support.IMessageCode;
+import pres.jeremy.bellatrix.common.web.support.Resources;
+import pres.jeremy.bellatrix.common.web.utils.UserUtil;
 
 public enum ResultCode implements IMessageCode {
 
     OPERATE_SUCCESS(1, "OPERATE_SUCCESS"),
 
     OPERATE_FAILED(-1, "OPERATE_FAILED"),
+
+    USER_NAME_NOT_EXISTS(-1, "USER_NAME_NOT_EXISTS"),
+
+    PASSWORD_ERROR(-1, "PASSWORD_ERROR"),
 
     /**
      * 暂无数据

@@ -15,7 +15,7 @@
 
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>common-util</artifactId>
+            <artifactId>common-web</artifactId>
             <version>${project.version}</version>
         </dependency>
 

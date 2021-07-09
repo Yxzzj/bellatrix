@@ -1,9 +1,10 @@
 server:
   port: 9002
-
 spring:
   application:
     name: lesson-service
+  profiles:
+    active: dev
   zipkin:
     enabled: true
     locator:
@@ -17,11 +18,3 @@ spring:
   sleuth:
     sampler:
       probability: 1
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 192.168.2.40:8848
-    sentinel:
-      transport:
-        port: 18748
-        dashboard: 192.168.2.40:8748

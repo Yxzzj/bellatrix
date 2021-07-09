@@ -15,7 +15,13 @@
 
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>common-util</artifactId>
+            <artifactId>common-web</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>lesson-api</artifactId>
             <version>${project.version}</version>
         </dependency>
 
@@ -64,6 +70,11 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
         </dependency>
     </dependencies>
 

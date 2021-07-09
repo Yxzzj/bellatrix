@@ -3,6 +3,8 @@ server:
 spring:
   application:
     name: gateway-service
+  profiles:
+    active: dev
   zipkin:
     enabled: true
     locator:
@@ -17,13 +19,6 @@ spring:
     sampler:
       probability: 1
   cloud:
-    nacos:
-      discovery:
-        server-addr: 192.168.2.40:8848
-    sentinel:
-      transport:
-        port: 18750
-        dashboard: 192.168.2.40:8748
     gateway:
       discovery:
         locator:
@@ -41,8 +36,28 @@ spring:
             - Path=/lesson/**
           filters:
             - RewritePath=/lesson/(?<path>.*), /$\{path}
+        - id: oauth
+          uri: lb://oauth-service
+          predicates:
+            - Path=/oauth/**
+          filters:
+            - RewritePath=/oauth/(?<path>.*), /$\{path}
 logging:
   level:
     com:
       alibaba:
         nacos: warn
+swagger:
+  title: bellatrix
+  description: "bellatrix"
+  version: 1.0
+  license: ""
+  licenseUrl: http://baidu.com
+  terms-of-service-url: http://baidu.com
+  contact:
+    name: zhangjun
+    email: zhangjun@123.com
+    url: http://baidu.com
+  authorization:
+    name: pig4cloud OAuth
+    auth-regex: ^.*$

@@ -37,6 +37,7 @@ spring:
       transport:
         port: 18749
         dashboard: 192.168.2.40:8748
+
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
   typeAliasesPackage: pres.jeremy.bellatrix.*.entity

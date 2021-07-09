@@ -1,0 +1,18 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.2.40:8848
+    sentinel:
+      transport:
+        port: 18751
+        dashboard: 127.0.0.1:8748
+      eager: true
+      datasource:
+        flow:
+          nacos:
+            server-addr: 192.168.2.40:8848
+            data-id: ${spring.application.name}-flow-rules
+            group-id: SENTINEL_GROUP
+            data-type: json
+            rule-type: flow
